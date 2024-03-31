@@ -43,7 +43,7 @@ const ProductList = () => {
 
         <h1 className="heading">Products</h1>
         <div className="product-list">
-          {products.map((product) => (
+          {products?.map((product) => (
             <ProductCard key={product.id} product={product} />
           ))}
         </div>

@@ -7,9 +7,10 @@ import '../styles/ProductDetails.css';
 
 const ProductDetails = () => {
   const { id } = useParams();
-  const [product, setProduct] = useState(null);
-  const [selectedImage, setSelectedImage] = useState(null);
+  const [product, setProduct] = useState({});
+  const [selectedImage, setSelectedImage] = useState("");
   const [quantity, setQuantity] = useState(1);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -17,6 +18,7 @@ const ProductDetails = () => {
         const response = await axios.get(`/products/${id}`);
         setProduct(response.data);
         setSelectedImage(response.data.images[0]);
+        setLoading(false)
       } catch (error) {
         console.error('Error fetching data:', error);
       }
@@ -25,7 +27,7 @@ const ProductDetails = () => {
     fetchData();
   }, [id]);
 
-  if (!product) {
+  if (loading) {
     return <Loading />;
   }
 
@@ -35,11 +37,11 @@ const ProductDetails = () => {
         <div className="details-left">
           <img src={selectedImage} alt={product?.title} className="details-full-image" />
           <div className="details-images">
-            {product?.images.map((image, index) => (
+            {product?.images?.map((image, index) => (
               <img
                 key={index}
                 src={image}
-                alt={product.title}
+                alt={product?.title}
                 className={`details-images-list ${selectedImage === image && 'selected'}`}
                 onClick={() => setSelectedImage(image)}
               />
@@ -48,7 +50,7 @@ const ProductDetails = () => {
         </div>
 
         <div className="details-right">
-          <h1>{product?.title.toUpperCase()}</h1>
+          <h1>{product?.title?.toUpperCase()}</h1>
           <p>{product?.description}</p>
           <h1>&#36;{product?.price}</h1>
           <div className="details-quantity">

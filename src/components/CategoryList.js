@@ -6,14 +6,14 @@ const CategoryList = ({ categories }) => {
 
   return (
     <div className="category-list">
-      {categories.map((category) => (
+      {categories?.map((category) => (
         <div
-          key={category.id}
+          key={category?.id}
           className="category-item"
-          onClick={() => navigate(`/categories/${category.id}/products`)}
+          onClick={() => navigate(`/categories/${category?.id}/products`)}
         >
-          <img src={category.image} alt={category.name} className="category-image" />
-          <p className="category-name">{category.name}</p>
+          <img src={category?.image} alt={category?.name} className="category-image" />
+          <p className="category-name">{category?.name}</p>
         </div>
       ))}
     </div>

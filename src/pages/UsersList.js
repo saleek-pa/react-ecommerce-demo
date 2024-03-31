@@ -29,12 +29,12 @@ const UsersList = () => {
     <div className="container">
       <h1 className="heading">Users</h1>
       <div className="users-list">
-        {users.map((user) => (
-          <div key={user.id} className="users-list-card">
-            <img src={user.avatar} alt={user.name} className="user-image" />
+        {users?.map((user) => (
+          <div key={user?.id} className="users-list-card">
+            <img src={user?.avatar} alt={user?.name} className="user-image" />
             <div>
-              <h3>{user.name}</h3>
-              <p>{user.email}</p>
+              <h3>{user?.name}</h3>
+              <p>{user?.email}</p>
             </div>
           </div>
         ))}

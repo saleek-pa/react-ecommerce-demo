@@ -29,10 +29,10 @@ const ProductsByCategory = () => {
 
   return (
     <div className="container">
-      <h1 className="heading">{products[0]?.category.name}</h1>
+      <h1 className="heading">{products.length > 0 && products[0]?.category?.name}</h1>
       <div className="product-list">
-        {products.map((product) => (
-          <ProductCard key={product.id} product={product} />
+        {products?.map((product) => (
+          <ProductCard key={product?.id} product={product} />
         ))}
       </div>
     </div>
