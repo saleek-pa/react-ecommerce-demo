@@ -3,7 +3,7 @@ import ProductList from './pages/ProductList';
 import UsersList from './pages/UsersList';
 import ProductDetails from './pages/ProductDetails';
 import ProductsByCategory from './pages/ProductsByCategory';
-import NotFound from './pages/NotFound';
+import NotFound from './components/NotFound';
 
 function App() {
   return (
