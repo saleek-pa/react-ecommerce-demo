@@ -8,48 +8,49 @@
 }
 
 .details-images {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 10px;
 }
 
 .details-images-list {
-    width: 130px;
-    cursor: pointer;
+  width: 130px;
+  cursor: pointer;
 }
 
 .selected {
-    outline: 2px solid black;
+  outline: 2px solid black;
 }
 
 .details-right {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    width: 600px;
-    margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 600px;
+  margin-top: 40px;
 }
 
 .details-quantity {
-    display: flex;
-    justify-content: start;
-    align-items: center;
-    gap: 20px;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  gap: 20px;
 }
 
-.quantity-decrement,  .quantity-increment {
-    padding: 10px 20px;
-    border-width: 1px;
-    border-radius: 10px;
-    font-size: large;
+.quantity-decrement,
+.quantity-increment {
+  padding: 10px 20px;
+  border-width: 1px;
+  border-radius: 10px;
+  font-size: large;
 }
 
 .quantity-count {
-    border: 1px solid black;
-    font-size: large;
-    padding: 8px 35px;
-    border-radius: 10px;
+  border: 1px solid black;
+  font-size: large;
+  padding: 8px 35px;
+  border-radius: 10px;
 }
 
 .details-add-to-cart-btn {
@@ -61,4 +62,70 @@
   font-size: medium;
   cursor: pointer;
   width: 320px;
+}
+
+@media (max-width: 1200px) {
+  .details-full-image {
+    width: 300px;
+  }
+
+  .details-images-list {
+    width: 80px;
+  }
+
+  .details-right {
+    width: 500px;
+  }
+}
+
+@media (max-width: 992px) {
+  .details-full-image {
+    width: 250px;
+  }
+
+  .details-images-list {
+    width: 70px;
+  }
+
+  .details-right {
+    width: 400px;
+  }
+}
+
+@media (max-width: 768px) {
+  .details-page {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .details-right {
+    margin-bottom: 50px;
+  }
+
+  .details-right {
+    width: 300px;
+  }
+}
+
+@media (max-width: 480px) {
+  .details-page {
+    gap: 0px;
+  }
+
+  .details-right {
+    margin-bottom: 50px;
+  }
+
+  .details-right {
+    width: 250px;
+  }
+
+  .details-quantity {
+    justify-content: center;
+    gap: 10px;
+  }
+
+  .details-add-to-cart-btn {
+    width: 260px;
+  }
 }
