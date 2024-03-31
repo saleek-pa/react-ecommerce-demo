@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import ProductCard from '../components/ProductCard';
+import Loading from '../components/Loading';
 import { axios } from '../configs/Axios';
 
 const ProductsByCategory = () => {
@@ -23,7 +24,7 @@ const ProductsByCategory = () => {
   }, [categoryID]);
 
   if (loading) {
-    return <div className="container">Loading...</div>;
+    return <Loading />;
   }
 
   return (

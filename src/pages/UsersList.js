@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { axios } from '../configs/Axios';
+import Loading from '../components/Loading';
 import '../styles/UsersList.css';
 
 const UsersList = () => {
@@ -21,7 +22,7 @@ const UsersList = () => {
   }, []);
 
   if (loading) {
-    return <div className="container">Loading...</div>;
+    return <Loading />;
   }
 
   return (

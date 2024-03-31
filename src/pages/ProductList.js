@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { axios } from '../configs/Axios';
 import Navbar from '../components/Navbar';
 import ProductCard from '../components/ProductCard';
+import Loading from '../components/Loading';
 import '../styles/ProductList.css';
 
 const ProductList = () => {
@@ -31,7 +32,7 @@ const ProductList = () => {
   }, []);
 
   if (loading) {
-    return <div className="container">Loading...</div>;
+    return <Loading />;
   }
 
   return (
