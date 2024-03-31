@@ -1,0 +1,15 @@
+.navbar {
+    display: flex;
+    justify-content: space-around;
+    padding-top: 20px;
+}
+
+.users-btn {
+    padding: 10px 30px;
+    font-size: medium;
+    border-radius: 10px;
+    color: white;
+    background-color: rgb(35, 35, 35);
+    border: none;
+    outline: none;
+}
