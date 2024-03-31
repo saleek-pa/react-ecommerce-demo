@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { axios } from '../configs/Axios';
 import Loading from '../components/Loading';
+import Button from '../components/Button';
 import '../styles/ProductDetails.css';
 
 const ProductDetails = () => {
@@ -52,17 +53,17 @@ const ProductDetails = () => {
           <h1>&#36;{product?.price}</h1>
           <div className="details-quantity">
             <h3>Quantity</h3>
-            <button className="quantity-decrement" onClick={() => quantity > 1 && setQuantity(quantity - 1)}>
+            <Button className="quantity-decrement" onClick={() => quantity > 1 && setQuantity(quantity - 1)}>
               -
-            </button>
+            </Button>
             <p className="quantity-count">{quantity}</p>
-            <button className="quantity-increment" onClick={() => setQuantity(quantity + 1)}>
+            <Button className="quantity-increment" onClick={() => setQuantity(quantity + 1)}>
               +
-            </button>
+            </Button>
           </div>
-          <button className="details-add-to-cart-btn" onClick={() => alert('Added to cart')}>
+          <Button className="details-add-to-cart-btn" onClick={() => alert('Added to cart')}>
             Add to Cart
-          </button>
+          </Button>
         </div>
       </div>
     </div>

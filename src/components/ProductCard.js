@@ -1,5 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
+import Button from './Button';
 
 const ProductCard = ({ product }) => {
   const navigate = useNavigate();
@@ -12,7 +13,7 @@ const ProductCard = ({ product }) => {
       </div>
       <div className="price-btn">
         <p className="product-price">&#36;{product.price}</p>
-        <button className="add-to-cart-btn">Add to Cart</button>
+        <Button className="add-to-cart-btn">Add to Cart</Button>
       </div>
     </div>
   );
