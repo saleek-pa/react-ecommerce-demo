@@ -1,16 +1,15 @@
 import React, { useEffect, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
 import { axios } from '../configs/Axios';
 import Navbar from '../components/Navbar';
 import ProductCard from '../components/ProductCard';
 import Loading from '../components/Loading';
 import '../styles/ProductList.css';
+import CategoryList from '../components/CategoryList';
 
 const ProductList = () => {
   const [categories, setCategories] = useState([]);
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
-  const navigate = useNavigate();
 
   useEffect(() => {
     // Function to fetch categories and products data
@@ -22,7 +21,7 @@ const ProductList = () => {
         ]);
         setCategories(categoriesResponse.data.slice(0, 5));
         setProducts(productsResponse.data);
-        setLoading(false)
+        setLoading(false);
       } catch (error) {
         console.error('Error fetching data:', error);
       }
@@ -40,18 +39,7 @@ const ProductList = () => {
       <Navbar />
       <div className="container">
         <h1 className="heading"> Shop by category</h1>
-        <div className="category-list">
-          {categories.map((category) => (
-            <div
-              key={category.id}
-              className="category-item"
-              onClick={() => navigate(`/categories/${category.id}/products`)}
-            >
-              <img src={category.image} alt={category.name} className="category-image" />
-              <p className="category-name">{category.name}</p>
-            </div>
-          ))}
-        </div>
+        <CategoryList categories={categories} />
 
         <h1 className="heading">Products</h1>
         <div className="product-list">
